@@ -1,8 +1,22 @@
 import Image from "next/image";
 
+function FloatingCTA() {
+  return (
+    <a
+      href="https://calendly.com/john-lemonvoice/30min"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all"
+    >
+      <span>📅</span> Book a Free Call
+    </a>
+  );
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen font-[var(--font-geist-sans)]">
+      <FloatingCTA />
       <Nav />
       <main>
         <Hero />
@@ -36,7 +50,7 @@ function Nav() {
           <a href="#clients" className="hover:text-gray-900 transition-colors">Clients</a>
         </nav>
         <a
-          href="#consultation"
+          href="https://calendly.com/john-lemonvoice/30min"
           className="bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
         >
           Free Consultation
@@ -66,7 +80,7 @@ function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#consultation"
+            href="https://calendly.com/john-lemonvoice/30min"
             className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors"
           >
             Pitch Your Idea
@@ -355,7 +369,7 @@ function ConsultationCTA() {
           Tell us how your business makes money and where the friction is. We&apos;ll show you exactly what we&apos;d build to fix it.
         </p>
         <a
-          href="mailto:john@lemonvoice.com"
+          href="https://calendly.com/john-lemonvoice/30min"
           className="inline-block bg-white text-[#4a7c59] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors"
         >
           Book Now

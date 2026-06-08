@@ -311,12 +311,28 @@ const clients = [
     name: "Live Caption AI",
     description:
       "Broadcast event captions over the web. Stream real-time transcripts to your audience, making your message more shareable and enhancing accessibility.",
+    url: "https://www.livecaptionai.com",
   },
   {
-    logo: "/images/speech.png",
-    name: "Speech Recognition Cloud",
+    logo: null,
+    name: "CMA Sacramento",
     description:
-      "Transcribe any conversation, recording, meeting, or video for free — and optionally receive an AI-generated summary to aid your decision making.",
+      "Family-owned industrial cleaning chemical and equipment company serving 800+ California accounts in hospitality, healthcare, and foodservice since 1990.",
+    url: "https://www.cmasacramento.com",
+  },
+  {
+    logo: null,
+    name: "The Train Station",
+    description:
+      "Fitness platform with professional training programs for athletes, adolescents, and adults — serving 2,500+ members across competitive and wellness tracks.",
+    url: "https://www.thetrainstation.co",
+  },
+  {
+    logo: null,
+    name: "Eco Delight Coffee",
+    description:
+      "Artisan coffee roasters sourcing specialty beans from sustainable farms worldwide, roasted fresh within 48 hours of every order.",
+    url: "https://www.buyecodelight.com",
   },
 ];
 
@@ -334,17 +350,23 @@ function Clients() {
         <div className="grid md:grid-cols-2 gap-8">
           {clients.map((c) => (
             <div key={c.name} className="bg-gray-50 rounded-2xl p-8 text-center">
-              <Image
-                src={c.logo}
-                alt={c.name}
-                width={80}
-                height={80}
-                className="mx-auto mb-4 object-contain"
-              />
+              {c.logo ? (
+                <Image
+                  src={c.logo}
+                  alt={c.name}
+                  width={80}
+                  height={80}
+                  className="mx-auto mb-4 object-contain"
+                />
+              ) : (
+                <div className="w-16 h-16 rounded-full bg-[#4a7c59]/10 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-[#4a7c59] font-bold text-xl">{c.name[0]}</span>
+                </div>
+              )}
               <h3 className="font-bold text-gray-900 text-lg mb-3">{c.name}</h3>
               <p className="text-gray-600 text-sm mb-5 leading-relaxed">{c.description}</p>
-              <a href="#" className="text-[#4a7c59] font-semibold text-sm hover:underline">
-                Learn More →
+              <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-[#4a7c59] font-semibold text-sm hover:underline">
+                Visit Site →
               </a>
             </div>
           ))}

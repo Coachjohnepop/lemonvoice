@@ -91,7 +91,7 @@ function Hero() {
           </a>
           <a
             href="#how-we-work"
-            className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-10 py-4 rounded-full text-lg transition-colors"
+            className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-10 py-4 rounded-full text-lg transition-all hover:scale-[1.4]"
           >
             See How We Work
           </a>

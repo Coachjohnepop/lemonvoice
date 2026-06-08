@@ -11,6 +11,7 @@ export default function Home() {
         <Solutions />
         <Services />
         <Clients />
+        <ConsultationCTA />
       </main>
       <Footer />
     </div>
@@ -35,10 +36,10 @@ function Nav() {
           <a href="#services" className="hover:text-gray-900 transition-colors">Services</a>
         </nav>
         <a
-          href="#contact"
+          href="#consultation"
           className="bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
         >
-          Get Started
+          Free Consultation
         </a>
       </div>
     </header>
@@ -57,11 +58,12 @@ function Hero() {
           className="mx-auto mb-8"
           priority
         />
-        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-4">
           An app dev agency that combines your expertise with the power of voice integration to help you solve problems and reimagine your business.
         </p>
+        <p className="text-2xl font-bold text-[#4a7c59] mb-10">Sounds like Lemonvoice.</p>
         <a
-          href="#contact"
+          href="#consultation"
           className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors"
         >
           Pitch an Idea
@@ -76,21 +78,25 @@ function About() {
     <section id="about" className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Empowering Businesses with Rev-Gen Apps
-          </h2>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            We believe technology should drive growth and unlock potential. Our mission is to build voice-integrated applications that generate real revenue for your business.
-          </p>
-          <div className="grid grid-cols-2 gap-4 mb-8">
+          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Our Values</p>
+          <div className="flex flex-wrap gap-3 mb-8">
             {["Innovation", "Collaboration", "Integrity", "Customer Success"].map((v) => (
-              <div key={v} className="flex items-center gap-2 text-[#4a7c59] font-semibold">
-                <span>✓</span> {v}
-              </div>
+              <span key={v} className="bg-[#4a7c59]/10 text-[#4a7c59] text-sm font-semibold px-4 py-1.5 rounded-full">
+                {v}
+              </span>
             ))}
           </div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Empowering Businesses with Rev-Gen Apps
+          </h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            At Lemonvoice, our mission is to empower businesses by transforming ideas into innovative, revenue-generating applications. We believe in technology that drives growth and unlocks potential.
+          </p>
+          <p className="text-gray-600 leading-relaxed mb-8">
+            We partner with you to transform your ideas into powerful applications that drive business success. Together, we can create solutions that help your business thrive.
+          </p>
           <a
-            href="#contact"
+            href="#consultation"
             className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-8 py-3 rounded-full transition-colors"
           >
             Pitch an Idea
@@ -114,20 +120,17 @@ const benefits = [
   {
     icon: "/images/Ideas_Icon.webp",
     title: "Tailored App Solutions for Biz Challenges",
-    description:
-      "Custom-built applications designed around your specific industry, workflows, and goals.",
+    description: "We create applications that seamlessly integrate with your existing processes.",
   },
   {
     icon: "/images/Voice_Icon.webp",
     title: "Voice Integration for Enhanced User Exp",
-    description:
-      "Speech-to-text and voice commands seamlessly integrated to improve accessibility and efficiency.",
+    description: "Voice integration technology enhances accessibility and engagement.",
   },
   {
     icon: "/images/Deployment_Icon.webp",
     title: "Flexible Deployment Options",
-    description:
-      "Deploy on the cloud, on-premise, or hybrid — whatever fits your business and compliance needs.",
+    description: "We offer deployment solutions that adapt to your business environment.",
   },
 ];
 
@@ -137,9 +140,6 @@ function WhyChoose() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Lemonvoice</h2>
-          <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            We build apps that actually work for your business — not generic solutions.
-          </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {benefits.map((b) => (
@@ -156,14 +156,17 @@ function WhyChoose() {
             </div>
           ))}
         </div>
-        <div className="flex justify-center">
+        <div className="bg-white rounded-3xl p-10 text-center shadow-sm">
           <Image
             src="/images/Lemons.webp"
             alt="Lemonvoice platform"
-            width={500}
-            height={300}
-            className="rounded-2xl"
+            width={180}
+            height={180}
+            className="mx-auto mb-6"
           />
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            Lemonvoice offers a powerful, monetizable platform, allowing industry professionals to license and leverage your technology to amplify their own success.
+          </p>
         </div>
       </div>
     </section>
@@ -173,53 +176,50 @@ function WhyChoose() {
 const solutions = [
   {
     arrow: "/images/Green-Arrow.webp",
-    title: "Business Automation",
-    description:
-      "Streamline operations with voice-powered workflows that reduce manual effort and boost productivity.",
+    title: "From Small to Enterprise Biz Automation",
+    description: "Automate data collection and streamline service management.",
   },
   {
     arrow: "/images/Gold-Arrow.webp",
-    title: "Nonprofit & Education",
-    description:
-      "Cost-effective voice solutions for mission-driven organizations and educational institutions.",
+    title: "Non-Profits & Education Solutions",
+    description: "Voice integration enhances events and supports ADA compliance.",
   },
   {
     arrow: "/images/Blue-Arrow.webp",
-    title: "Healthcare & Legal",
-    description:
-      "HIPAA and compliance-ready transcription and documentation for high-stakes industries.",
+    title: "Healthcare & Legal Solutions",
+    description: "Accurate, compliant speech-to-text services enhance productivity.",
   },
 ];
 
 function Solutions() {
   return (
     <section id="solutions" className="py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
-          <div className="flex justify-center">
-            <Image
-              src="/images/Appscreen-Hand.webp"
-              alt="App in hand"
-              width={380}
-              height={480}
-            />
-          </div>
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Industry Solutions</h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Voice-integrated applications built for the industries that need them most.
-            </p>
-            <div className="space-y-6">
-              {solutions.map((s) => (
-                <div key={s.title} className="flex items-start gap-4">
-                  <Image src={s.arrow} alt="" width={28} height={28} className="mt-1 flex-none" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{s.title}</h3>
-                    <p className="text-gray-600 text-sm">{s.description}</p>
-                  </div>
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="flex justify-center">
+          <Image
+            src="/images/Appscreen-Hand.webp"
+            alt="App in hand"
+            width={380}
+            height={480}
+          />
+        </div>
+        <div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Custom Apps Tailored for Your Industry
+          </h2>
+          <p className="text-gray-600 leading-relaxed mb-8">
+            Our software solutions cater to diverse industries, ensuring compliance and efficiency. We harness the latest technology to meet your unique needs.
+          </p>
+          <div className="space-y-6">
+            {solutions.map((s) => (
+              <div key={s.title} className="flex items-start gap-4">
+                <Image src={s.arrow} alt="" width={28} height={28} className="mt-1 flex-none" />
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">{s.title}</h3>
+                  <p className="text-gray-600 text-sm">{s.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -231,22 +231,26 @@ const services = [
   {
     icon: "⚡",
     title: "Minimum Viable Product",
-    description: "Get a working product to market fast. Validate your idea before full investment.",
+    description:
+      "We rapidly develop MVPs, delivering functional prototypes within weeks so you can test, refine, and validate your application early.",
   },
   {
     icon: "🎙️",
     title: "Voice & Accessibility",
-    description: "ADA-compliant voice integration that opens your app to every user.",
+    description:
+      "Our solutions enable applications to process spoken words into text and enhance accessibility for a more inclusive user experience.",
   },
   {
     icon: "💡",
     title: "Ideation & Design",
-    description: "From concept to prototype — we help you shape the right product.",
+    description:
+      "We design intelligent workflows and seamless user experiences, blending innovation with expertise to bring your vision to life.",
   },
   {
     icon: "🛠️",
     title: "Ongoing Support",
-    description: "We stay with you post-launch with continuous maintenance and updates.",
+    description:
+      "We provide continuous updates, maintenance, and improvements to ensure your application remains stable, engaging, and free from churn.",
   },
 ];
 
@@ -278,26 +282,28 @@ const clients = [
   {
     logo: "/images/EYE.png",
     name: "Live Caption AI",
-    description: "Real-time captioning powered by voice AI for live events and meetings.",
+    description:
+      "Broadcast event captions over the web! Stream real-time transcripts to your audience, making your message more shareable and enhancing accessibility.",
   },
   {
     logo: "/images/speech.png",
     name: "Speech Recognition Cloud",
-    description: "Cloud-based speech recognition platform for enterprise transcription needs.",
+    description:
+      "Transcribe any conversation, recording, meeting, or video for free. And optionally receive an AI generated summary to aid your decision making.",
   },
 ];
 
 function Clients() {
   return (
-    <section id="contact" className="py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-24 px-6 bg-white">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Showcase</h2>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
             Real products built by Lemonvoice, live in the market.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 gap-8">
           {clients.map((c) => (
             <div key={c.name} className="bg-gray-50 rounded-2xl p-8 text-center">
               <Image
@@ -307,26 +313,36 @@ function Clients() {
                 height={80}
                 className="mx-auto mb-4 object-contain"
               />
-              <h3 className="font-semibold text-gray-900 mb-2">{c.name}</h3>
-              <p className="text-gray-600 text-sm mb-4">{c.description}</p>
+              <h3 className="font-bold text-gray-900 text-lg mb-3">{c.name}</h3>
+              <p className="text-gray-600 text-sm mb-5 leading-relaxed">{c.description}</p>
               <a href="#" className="text-[#4a7c59] font-semibold text-sm hover:underline">
                 Learn More →
               </a>
             </div>
           ))}
         </div>
-        <div className="text-center bg-gradient-to-br from-[#4a7c59] to-[#3d6849] rounded-3xl py-16 px-8 text-white">
-          <h2 className="text-3xl font-bold mb-4">Ready to build something?</h2>
-          <p className="text-white/80 text-lg mb-8">
-            Tell us about your project. We&apos;ll show you how voice can transform it.
-          </p>
-          <a
-            href="mailto:hello@lemonvoice.com"
-            className="inline-block bg-white text-[#4a7c59] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors"
-          >
-            hello@lemonvoice.com
-          </a>
-        </div>
+      </div>
+    </section>
+  );
+}
+
+function ConsultationCTA() {
+  return (
+    <section
+      id="consultation"
+      className="py-24 px-6 bg-gradient-to-br from-[#4a7c59] to-[#3d6849] text-white text-center"
+    >
+      <div className="max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold mb-4">Free Consultation</h2>
+        <p className="text-white/80 text-lg mb-10">
+          Ready to build something? Tell us about your project and we&apos;ll show you how voice can transform it.
+        </p>
+        <a
+          href="mailto:hello@lemonvoice.com"
+          className="inline-block bg-white text-[#4a7c59] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors"
+        >
+          Book Now
+        </a>
       </div>
     </section>
   );
@@ -342,7 +358,7 @@ function Footer() {
           width={140}
           height={36}
         />
-        <p>© {new Date().getFullYear()} Lemonvoice. All rights reserved.</p>
+        <p>© 2024 Lemonvoice. All rights reserved.</p>
       </div>
     </footer>
   );

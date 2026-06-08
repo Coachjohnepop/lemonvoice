@@ -6,10 +6,10 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <About />
-        <WhyChoose />
-        <Solutions />
+        <Problem />
+        <HowWeWork />
         <Services />
+        <Industries />
         <Clients />
         <ConsultationCTA />
       </main>
@@ -30,10 +30,10 @@ function Nav() {
           priority
         />
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-          <a href="#about" className="hover:text-gray-900 transition-colors">About</a>
-          <a href="#why" className="hover:text-gray-900 transition-colors">Why Us</a>
-          <a href="#solutions" className="hover:text-gray-900 transition-colors">Solutions</a>
+          <a href="#how-we-work" className="hover:text-gray-900 transition-colors">How We Work</a>
           <a href="#services" className="hover:text-gray-900 transition-colors">Services</a>
+          <a href="#industries" className="hover:text-gray-900 transition-colors">Industries</a>
+          <a href="#clients" className="hover:text-gray-900 transition-colors">Clients</a>
         </nav>
         <a
           href="#consultation"
@@ -49,7 +49,7 @@ function Nav() {
 function Hero() {
   return (
     <section className="bg-gradient-to-br from-[#f0f7f2] via-white to-[#fefce8] py-28 px-6 text-center">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <Image
           src="/images/Lemonvoice_Header_Logo.webp"
           alt="Lemonvoice"
@@ -58,54 +58,63 @@ function Hero() {
           className="mx-auto mb-8"
           priority
         />
-        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-4">
-          An app dev agency that combines your expertise with the power of voice integration to help you solve problems and reimagine your business.
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+          An app agency focused on your business processes and revenue goals.
+        </h1>
+        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
+          We build custom applications that run the revenue-generating workflows your business depends on — not off-the-shelf software that almost fits.
         </p>
-        <p className="text-2xl font-bold text-[#4a7c59] mb-10">Sounds like Lemonvoice.</p>
-        <a
-          href="#consultation"
-          className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors"
-        >
-          Pitch an Idea
-        </a>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#consultation"
+            className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors"
+          >
+            Pitch Your Idea
+          </a>
+          <a
+            href="#how-we-work"
+            className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-10 py-4 rounded-full text-lg transition-colors"
+          >
+            See How We Work
+          </a>
+        </div>
       </div>
     </section>
   );
 }
 
-function About() {
+function Problem() {
   return (
-    <section id="about" className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Our Values</p>
-          <div className="flex flex-wrap gap-3 mb-8">
-            {["Innovation", "Collaboration", "Integrity", "Customer Success"].map((v) => (
-              <span key={v} className="bg-[#4a7c59]/10 text-[#4a7c59] text-sm font-semibold px-4 py-1.5 rounded-full">
-                {v}
-              </span>
-            ))}
-          </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Empowering Businesses with Rev-Gen Apps
+          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">The Problem</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            Generic software wasn&apos;t built for your business.
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            At Lemonvoice, our mission is to empower businesses by transforming ideas into innovative, revenue-generating applications. We believe in technology that drives growth and unlocks potential.
+            Platforms like Odoo, Salesforce, and off-the-shelf SaaS tools are built for the average business. If your workflows are unique — and they are — you spend more time working around the software than with it.
           </p>
           <p className="text-gray-600 leading-relaxed mb-8">
-            We partner with you to transform your ideas into powerful applications that drive business success. Together, we can create solutions that help your business thrive.
+            We build apps around your processes, not the other way around. Every workflow, every integration, every screen is designed for how your business actually runs and what drives your revenue.
           </p>
-          <a
-            href="#consultation"
-            className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-8 py-3 rounded-full transition-colors"
-          >
-            Pitch an Idea
-          </a>
+          <div className="flex flex-col gap-3">
+            {[
+              "Built around your specific workflows",
+              "No features you don't need, nothing missing that you do",
+              "Owned by you — not a subscription you can't escape",
+            ].map((point) => (
+              <div key={point} className="flex items-start gap-3">
+                <span className="text-[#4a7c59] font-bold mt-0.5">✓</span>
+                <span className="text-gray-700">{point}</span>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="flex justify-center">
           <Image
             src="/images/Money-Making_Graphic.webp"
-            alt="Revenue-generating apps"
+            alt="Revenue-generating workflows"
             width={480}
             height={400}
             className="rounded-2xl"
@@ -116,84 +125,134 @@ function About() {
   );
 }
 
-const benefits = [
-  {
-    icon: "/images/Ideas_Icon.webp",
-    title: "Tailored App Solutions for Biz Challenges",
-    description: "We create applications that seamlessly integrate with your existing processes.",
-  },
-  {
-    icon: "/images/Voice_Icon.webp",
-    title: "Voice Integration for Enhanced User Exp",
-    description: "Voice integration technology enhances accessibility and engagement.",
-  },
-  {
-    icon: "/images/Deployment_Icon.webp",
-    title: "Flexible Deployment Options",
-    description: "We offer deployment solutions that adapt to your business environment.",
-  },
-];
-
-function WhyChoose() {
+function HowWeWork() {
   return (
-    <section id="why" className="py-24 px-6 bg-[#f9fbf9]">
+    <section id="how-we-work" className="py-24 px-6 bg-[#f9fbf9]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Lemonvoice</h2>
+          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">How We Work</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            AI-powered development. Human-led strategy.
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            We use the latest AI tools — Claude, Grok, and others — alongside experienced DevOps engineers to build faster and smarter than traditional dev shops. You get a real, custom-coded app without the bloated agency price tag.
+          </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {benefits.map((b) => (
-            <div key={b.title} className="bg-white rounded-2xl p-8 shadow-sm text-center">
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: "/images/Ideas_Icon.webp",
+              title: "Start with your business",
+              description:
+                "We learn your workflows, your revenue drivers, and what's slowing you down before we write a single line of code.",
+            },
+            {
+              icon: "/images/Voice_Icon.webp",
+              title: "Build with AI + DevOps",
+              description:
+                "Our team uses AI-assisted development and contracted DevOps engineers to ship real, production-quality software — fast.",
+            },
+            {
+              icon: "/images/Deployment_Icon.webp",
+              title: "Deploy and iterate",
+              description:
+                "We get your app live and keep improving it. No handoff and disappear — we stay with you as your business grows.",
+            },
+          ].map((step) => (
+            <div key={step.title} className="bg-white rounded-2xl p-8 shadow-sm text-center">
               <Image
-                src={b.icon}
-                alt={b.title}
+                src={step.icon}
+                alt={step.title}
                 width={80}
                 height={80}
                 className="mx-auto mb-5"
               />
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{b.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{b.description}</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">{step.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
             </div>
           ))}
-        </div>
-        <div className="bg-white rounded-3xl p-10 text-center shadow-sm">
-          <Image
-            src="/images/Lemons.webp"
-            alt="Lemonvoice platform"
-            width={180}
-            height={180}
-            className="mx-auto mb-6"
-          />
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            Lemonvoice offers a powerful, monetizable platform, allowing industry professionals to license and leverage your technology to amplify their own success.
-          </p>
         </div>
       </div>
     </section>
   );
 }
 
-const solutions = [
+const services = [
   {
-    arrow: "/images/Green-Arrow.webp",
-    title: "From Small to Enterprise Biz Automation",
-    description: "Automate data collection and streamline service management.",
+    icon: "⚡",
+    title: "Revenue Workflow Apps",
+    description:
+      "We map your revenue-generating processes and build the custom app that automates and accelerates them.",
   },
   {
-    arrow: "/images/Gold-Arrow.webp",
-    title: "Non-Profits & Education Solutions",
-    description: "Voice integration enhances events and supports ADA compliance.",
+    icon: "🎙️",
+    title: "Voice & Accessibility",
+    description:
+      "Voice integration that lets your team work hands-free and makes your app accessible to every user.",
   },
   {
-    arrow: "/images/Blue-Arrow.webp",
-    title: "Healthcare & Legal Solutions",
-    description: "Accurate, compliant speech-to-text services enhance productivity.",
+    icon: "💡",
+    title: "Ideation & Design",
+    description:
+      "We design intelligent workflows and seamless user experiences, blending innovation with expertise to bring your vision to life.",
+  },
+  {
+    icon: "🛠️",
+    title: "Ongoing Support",
+    description:
+      "Continuous updates, maintenance, and improvements to keep your application stable and evolving with your business.",
   },
 ];
 
-function Solutions() {
+function Services() {
   return (
-    <section id="solutions" className="py-24 px-6 bg-white">
+    <section id="services" className="py-24 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Services</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">What we build for you</h2>
+          <p className="text-lg text-gray-600 max-w-xl mx-auto">
+            Every engagement is scoped around your specific needs. No packages, no upsells.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((s) => (
+            <div key={s.title} className="bg-gray-50 rounded-2xl p-7">
+              <div className="text-3xl mb-4">{s.icon}</div>
+              <h3 className="font-semibold text-gray-900 mb-2">{s.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{s.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const industries = [
+  {
+    arrow: "/images/Green-Arrow.webp",
+    title: "Small & Mid-Size Business Automation",
+    description:
+      "Automate the workflows that drive your revenue — quoting, fulfillment, client management, reporting.",
+  },
+  {
+    arrow: "/images/Gold-Arrow.webp",
+    title: "Non-Profits & Education",
+    description:
+      "Voice integration enhances events and supports ADA compliance on a budget that makes sense.",
+  },
+  {
+    arrow: "/images/Blue-Arrow.webp",
+    title: "Healthcare & Legal",
+    description:
+      "Accurate, compliant speech-to-text and documentation tools that keep your team productive.",
+  },
+];
+
+function Industries() {
+  return (
+    <section id="industries" className="py-24 px-6 bg-[#f9fbf9]">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div className="flex justify-center">
           <Image
@@ -204,14 +263,15 @@ function Solutions() {
           />
         </div>
         <div>
+          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Industries</p>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Custom Apps Tailored for Your Industry
+            Built for businesses that need a real solution.
           </h2>
           <p className="text-gray-600 leading-relaxed mb-8">
-            Our software solutions cater to diverse industries, ensuring compliance and efficiency. We harness the latest technology to meet your unique needs.
+            We focus on small and mid-size businesses that application companies have overlooked — companies with real, specific needs that generic software can&apos;t meet.
           </p>
           <div className="space-y-6">
-            {solutions.map((s) => (
+            {industries.map((s) => (
               <div key={s.title} className="flex items-start gap-4">
                 <Image src={s.arrow} alt="" width={28} height={28} className="mt-1 flex-none" />
                 <div>
@@ -227,80 +287,30 @@ function Solutions() {
   );
 }
 
-const services = [
-  {
-    icon: "⚡",
-    title: "Minimum Viable Product",
-    description:
-      "We rapidly develop MVPs, delivering functional prototypes within weeks so you can test, refine, and validate your application early.",
-  },
-  {
-    icon: "🎙️",
-    title: "Voice & Accessibility",
-    description:
-      "Our solutions enable applications to process spoken words into text and enhance accessibility for a more inclusive user experience.",
-  },
-  {
-    icon: "💡",
-    title: "Ideation & Design",
-    description:
-      "We design intelligent workflows and seamless user experiences, blending innovation with expertise to bring your vision to life.",
-  },
-  {
-    icon: "🛠️",
-    title: "Ongoing Support",
-    description:
-      "We provide continuous updates, maintenance, and improvements to ensure your application remains stable, engaging, and free from churn.",
-  },
-];
-
-function Services() {
-  return (
-    <section id="services" className="py-24 px-6 bg-[#f9fbf9]">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            Everything you need to go from idea to live product.
-          </p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((s) => (
-            <div key={s.title} className="bg-white rounded-2xl p-7 shadow-sm">
-              <div className="text-3xl mb-4">{s.icon}</div>
-              <h3 className="font-semibold text-gray-900 mb-2">{s.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{s.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 const clients = [
   {
     logo: "/images/EYE.png",
     name: "Live Caption AI",
     description:
-      "Broadcast event captions over the web! Stream real-time transcripts to your audience, making your message more shareable and enhancing accessibility.",
+      "Broadcast event captions over the web. Stream real-time transcripts to your audience, making your message more shareable and enhancing accessibility.",
   },
   {
     logo: "/images/speech.png",
     name: "Speech Recognition Cloud",
     description:
-      "Transcribe any conversation, recording, meeting, or video for free. And optionally receive an AI generated summary to aid your decision making.",
+      "Transcribe any conversation, recording, meeting, or video for free — and optionally receive an AI-generated summary to aid your decision making.",
   },
 ];
 
 function Clients() {
   return (
-    <section className="py-24 px-6 bg-white">
+    <section id="clients" className="py-24 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Showcase</h2>
+          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Live Apps</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Built by Lemonvoice. In the market today.</h2>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            Real products built by Lemonvoice, live in the market.
+            Real applications generating real results for real businesses.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
@@ -333,9 +343,16 @@ function ConsultationCTA() {
       className="py-24 px-6 bg-gradient-to-br from-[#4a7c59] to-[#3d6849] text-white text-center"
     >
       <div className="max-w-2xl mx-auto">
+        <Image
+          src="/images/Lemons.webp"
+          alt=""
+          width={120}
+          height={120}
+          className="mx-auto mb-6 opacity-90"
+        />
         <h2 className="text-4xl font-bold mb-4">Free Consultation</h2>
-        <p className="text-white/80 text-lg mb-10">
-          Ready to build something? Tell us about your project and we&apos;ll show you how voice can transform it.
+        <p className="text-white/80 text-lg mb-10 leading-relaxed">
+          Tell us how your business makes money and where the friction is. We&apos;ll show you exactly what we&apos;d build to fix it.
         </p>
         <a
           href="mailto:hello@lemonvoice.com"

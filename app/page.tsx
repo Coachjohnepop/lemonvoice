@@ -51,6 +51,8 @@ function Nav() {
         </nav>
         <a
           href="https://calendly.com/john-lemonvoice/30min"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
         >
           Free Consultation
@@ -81,6 +83,8 @@ function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="https://calendly.com/john-lemonvoice/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors"
           >
             Pitch Your Idea
@@ -370,6 +374,8 @@ function ConsultationCTA() {
         </p>
         <a
           href="https://calendly.com/john-lemonvoice/30min"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-white text-[#4a7c59] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors"
         >
           Book Now

@@ -62,7 +62,7 @@ function Hero() {
           An app agency focused on your business processes and revenue goals.
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
-          We build custom applications that run the revenue-generating workflows your business depends on — not off-the-shelf software that almost fits.
+          We scope, build, and launch custom applications around your business processes and revenue goals — from first idea to live product.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -90,13 +90,13 @@ function Problem() {
         <div>
           <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">The Problem</p>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Generic software wasn&apos;t built for your business.
+            Your business deserves software built for it.
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            Platforms like Odoo, Salesforce, and off-the-shelf SaaS tools are built for the average business. If your workflows are unique — and they are — you spend more time working around the software than with it.
+            Most small and mid-size businesses are forced to adapt their workflows to whatever off-the-shelf software almost fits. You end up paying for features you don&apos;t need and working around the ones you do.
           </p>
           <p className="text-gray-600 leading-relaxed mb-8">
-            We build apps around your processes, not the other way around. Every workflow, every integration, every screen is designed for how your business actually runs and what drives your revenue.
+            We start by understanding how your business makes money, then scope and build the application that supports it — designed around your processes from day one.
           </p>
           <div className="flex flex-col gap-3">
             {[
@@ -142,21 +142,21 @@ function HowWeWork() {
           {[
             {
               icon: "/images/Ideas_Icon.webp",
-              title: "Start with your business",
+              title: "Scope it together",
               description:
-                "We learn your workflows, your revenue drivers, and what's slowing you down before we write a single line of code.",
-            },
-            {
-              icon: "/images/Voice_Icon.webp",
-              title: "Build with AI + DevOps",
-              description:
-                "Our team uses AI-assisted development and contracted DevOps engineers to ship real, production-quality software — fast.",
+                "We learn your workflows, your revenue drivers, and what's slowing you down. Then we define exactly what to build — no guesswork, no bloat.",
             },
             {
               icon: "/images/Deployment_Icon.webp",
-              title: "Deploy and iterate",
+              title: "Build and launch fast",
               description:
-                "We get your app live and keep improving it. No handoff and disappear — we stay with you as your business grows.",
+                "Using AI-assisted development and experienced DevOps engineers, we ship production-quality software in weeks, not months.",
+            },
+            {
+              icon: "/images/Voice_Icon.webp",
+              title: "Grow with you",
+              description:
+                "We stay with you after launch — iterating, improving, and adding capabilities as your business evolves.",
             },
           ].map((step) => (
             <div key={step.title} className="bg-white rounded-2xl p-8 shadow-sm text-center">
@@ -179,22 +179,22 @@ function HowWeWork() {
 
 const services = [
   {
-    icon: "⚡",
-    title: "Revenue Workflow Apps",
+    icon: "🗺️",
+    title: "Scoping & MVP",
     description:
-      "We map your revenue-generating processes and build the custom app that automates and accelerates them.",
+      "We define exactly what to build and why, then deliver a working MVP fast — so you can validate and launch without over-investing upfront.",
   },
   {
-    icon: "🎙️",
-    title: "Voice & Accessibility",
+    icon: "⚙️",
+    title: "Custom App Development",
     description:
-      "Voice integration that lets your team work hands-free and makes your app accessible to every user.",
+      "Full-stack applications built around your revenue workflows — not adapted from a template.",
   },
   {
     icon: "💡",
     title: "Ideation & Design",
     description:
-      "We design intelligent workflows and seamless user experiences, blending innovation with expertise to bring your vision to life.",
+      "We design intelligent workflows and seamless user experiences, blending innovation with your domain expertise.",
   },
   {
     icon: "🛠️",

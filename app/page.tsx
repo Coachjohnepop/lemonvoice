@@ -355,7 +355,7 @@ function ConsultationCTA() {
           Tell us how your business makes money and where the friction is. We&apos;ll show you exactly what we&apos;d build to fix it.
         </p>
         <a
-          href="mailto:hello@lemonvoice.com"
+          href="mailto:john@lemonvoice.com"
           className="inline-block bg-white text-[#4a7c59] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors"
         >
           Book Now

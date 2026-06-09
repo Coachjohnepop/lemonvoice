@@ -6,7 +6,7 @@ function FloatingCTA() {
       href="https://calendly.com/john-lemonvoice/30min"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-[1.4]"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-[1.2]"
     >
       <span>📅</span> Book a Free Call
     </a>
@@ -53,7 +53,7 @@ function Nav() {
           href="https://calendly.com/john-lemonvoice/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all hover:scale-[1.4]"
+          className="bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all hover:scale-[1.2]"
         >
           Free Consultation
         </a>
@@ -85,13 +85,13 @@ function Hero() {
             href="https://calendly.com/john-lemonvoice/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-10 py-4 rounded-full text-lg transition-all hover:scale-[1.4]"
+            className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-10 py-4 rounded-full text-lg transition-all hover:scale-[1.2]"
           >
             Pitch Your Idea
           </a>
           <a
             href="#how-we-work"
-            className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-10 py-4 rounded-full text-lg transition-all hover:scale-[1.4]"
+            className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-10 py-4 rounded-full text-lg transition-all hover:scale-[1.2]"
           >
             See How We Work
           </a>
@@ -308,28 +308,40 @@ function Industries() {
 const clients = [
   {
     logo: "/images/EYE.png",
+    logoBg: "bg-white",
+    logoSize: { width: 72, height: 72 },
     name: "Live Caption AI",
+    tag: "Accessibility Tech",
     description:
       "Broadcast event captions over the web. Stream real-time transcripts to your audience, making your message more shareable and enhancing accessibility.",
     url: "https://www.livecaptionai.com",
   },
   {
-    logo: null,
+    logo: "/images/cma-logo.webp",
+    logoBg: "bg-white",
+    logoSize: { width: 130, height: 50 },
     name: "CMA Sacramento",
+    tag: "B2B Services",
     description:
       "Family-owned industrial cleaning chemical and equipment company serving 800+ California accounts in hospitality, healthcare, and foodservice since 1990.",
     url: "https://www.cmasacramento.com",
   },
   {
     logo: null,
+    logoBg: "bg-[#1c3975]",
+    logoSize: { width: 80, height: 80 },
     name: "The Train Station",
+    tag: "Fitness Platform",
     description:
-      "Fitness platform with professional training programs for athletes, adolescents, and adults — serving 2,500+ members across competitive and wellness tracks.",
+      "Professional training programs for athletes, adolescents, and adults — serving 2,500+ members across competitive and wellness tracks.",
     url: "https://www.thetrainstation.co",
   },
   {
-    logo: null,
+    logo: "/images/ecodelight-icon.svg",
+    logoBg: "bg-[#1a3a08]",
+    logoSize: { width: 72, height: 72 },
     name: "Eco Delight Coffee",
+    tag: "E-Commerce",
     description:
       "Artisan coffee roasters sourcing specialty beans from sustainable farms worldwide, roasted fresh within 48 hours of every order.",
     url: "https://www.buyecodelight.com",
@@ -338,37 +350,53 @@ const clients = [
 
 function Clients() {
   return (
-    <section id="clients" className="py-24 px-6 bg-white">
-      <div className="max-w-4xl mx-auto">
+    <section id="clients" className="py-24 px-6 bg-[#f9fbf9]">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Live Apps</p>
+          <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Client Work</p>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Built by Lemonvoice. In the market today.</h2>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
             Real applications generating real results for real businesses.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {clients.map((c) => (
-            <div key={c.name} className="bg-gray-50 rounded-2xl p-8 text-center">
-              {c.logo ? (
-                <Image
-                  src={c.logo}
-                  alt={c.name}
-                  width={80}
-                  height={80}
-                  className="mx-auto mb-4 object-contain"
-                />
-              ) : (
-                <div className="w-16 h-16 rounded-full bg-[#4a7c59]/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-[#4a7c59] font-bold text-xl">{c.name[0]}</span>
+            <a
+              key={c.name}
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
+            >
+              {/* Logo banner */}
+              <div className={`${c.logoBg} h-36 flex items-center justify-center p-6 border-b border-gray-100`}>
+                {c.logo ? (
+                  <Image
+                    src={c.logo}
+                    alt={c.name}
+                    width={c.logoSize.width}
+                    height={c.logoSize.height}
+                    className="object-contain max-h-24"
+                  />
+                ) : (
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="text-white font-black text-3xl tracking-tight">THE TRAIN</span>
+                    <span className="text-white/70 font-semibold text-lg tracking-widest uppercase">Station</span>
+                  </div>
+                )}
+              </div>
+              {/* Content */}
+              <div className="p-7 flex flex-col flex-1">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-bold text-gray-900 text-lg">{c.name}</h3>
+                  <span className="text-xs font-semibold text-[#4a7c59] bg-[#4a7c59]/10 px-3 py-1 rounded-full">{c.tag}</span>
                 </div>
-              )}
-              <h3 className="font-bold text-gray-900 text-lg mb-3">{c.name}</h3>
-              <p className="text-gray-600 text-sm mb-5 leading-relaxed">{c.description}</p>
-              <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-[#4a7c59] font-semibold text-sm hover:underline">
-                Visit Site →
-              </a>
-            </div>
+                <p className="text-gray-600 text-sm leading-relaxed flex-1">{c.description}</p>
+                <div className="mt-5 flex items-center gap-1 text-[#4a7c59] font-semibold text-sm group-hover:gap-2 transition-all">
+                  Visit Site <span>→</span>
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </div>
@@ -398,7 +426,7 @@ function ConsultationCTA() {
           href="https://calendly.com/john-lemonvoice/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-[#4a7c59] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-all hover:scale-[1.4]"
+          className="inline-block bg-white text-[#4a7c59] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-all hover:scale-[1.2]"
         >
           Book Now
         </a>

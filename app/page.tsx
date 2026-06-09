@@ -327,9 +327,9 @@ const clients = [
     url: "https://www.cmasacramento.com",
   },
   {
-    logo: null,
-    logoBg: "bg-[#1c3975]",
-    logoSize: { width: 80, height: 80 },
+    logo: "/images/trainstation-logo.png",
+    logoBg: "bg-white",
+    logoSize: { width: 160, height: 160 },
     name: "The Train Station",
     tag: "Fitness Platform",
     description:

@@ -337,9 +337,9 @@ const clients = [
     url: "https://www.thetrainstation.co",
   },
   {
-    logo: "/images/ecodelight-icon.svg",
-    logoBg: "bg-[#1a3a08]",
-    logoSize: { width: 72, height: 72 },
+    logo: "/images/ecodelight-logo.png",
+    logoBg: "bg-[#f5f0e8]",
+    logoSize: { width: 200, height: 116 },
     name: "Eco Delight Coffee",
     tag: "E-Commerce",
     description:

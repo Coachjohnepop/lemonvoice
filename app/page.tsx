@@ -446,7 +446,7 @@ function Footer() {
           className="transition-all duration-300 hover:scale-[3] origin-bottom-left"
         >
           <Image
-            src="/images/Lemonvoice-Footer-Logo.webp"
+            src="/images/Lemonvoice-Footer-Logo-White.webp"
             alt="Lemonvoice"
             width={140}
             height={36}

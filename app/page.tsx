@@ -64,20 +64,20 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="bg-gradient-to-br from-[#f0f7f2] via-white to-[#fefce8] py-28 px-6 text-center">
+    <section className="bg-gradient-to-br from-[#f0f7f2] via-white to-[#fefce8] py-16 px-6 text-center">
       <div className="max-w-4xl mx-auto">
         <Image
           src="/images/Lemonvoice_Header_Logo.webp"
           alt="Lemonvoice"
           width={320}
           height={120}
-          className="mx-auto mb-8"
+          className="mx-auto mb-5"
           priority
         />
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
           An app agency focused on your business processes and revenue goals.
         </h1>
-        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
           We scope, build, and launch custom applications around your business processes and revenue goals — from first idea to live product.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -103,8 +103,8 @@ function Hero() {
 
 function Problem() {
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section className="py-14 px-6 bg-white">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div>
           <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">The Problem</p>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -113,7 +113,7 @@ function Problem() {
           <p className="text-gray-600 leading-relaxed mb-4">
             Most small and mid-size businesses are forced to adapt their workflows to whatever off-the-shelf software almost fits. You end up paying for features you don&apos;t need and working around the ones you do.
           </p>
-          <p className="text-gray-600 leading-relaxed mb-8">
+          <p className="text-gray-600 leading-relaxed mb-5">
             We start by understanding how your business makes money, then scope and build the application that supports it — designed around your processes from day one.
           </p>
           <div className="flex flex-col gap-3">
@@ -145,9 +145,9 @@ function Problem() {
 
 function HowWeWork() {
   return (
-    <section id="how-we-work" className="py-24 px-6 bg-[#f9fbf9]">
+    <section id="how-we-work" className="py-14 px-6 bg-[#f9fbf9]">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">How We Work</p>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             AI-powered development. Human-led strategy.
@@ -224,9 +224,9 @@ const services = [
 
 function Services() {
   return (
-    <section id="services" className="py-24 px-6 bg-white">
+    <section id="services" className="py-14 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Services</p>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">What we build for you</h2>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
@@ -270,8 +270,8 @@ const industries = [
 
 function Industries() {
   return (
-    <section id="industries" className="py-24 px-6 bg-[#f9fbf9]">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section id="industries" className="py-14 px-6 bg-[#f9fbf9]">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center">
           <Image
             src="/images/Appscreen-Hand.webp"
@@ -285,7 +285,7 @@ function Industries() {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Built for businesses that need a real solution.
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-8">
+          <p className="text-gray-600 leading-relaxed mb-5">
             We focus on small and mid-size businesses that application companies have overlooked — companies with real, specific needs that generic software can&apos;t meet.
           </p>
           <div className="space-y-6">
@@ -350,9 +350,9 @@ const clients = [
 
 function Clients() {
   return (
-    <section id="clients" className="py-24 px-6 bg-[#f9fbf9]">
+    <section id="clients" className="py-14 px-6 bg-[#f9fbf9]">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Client Work</p>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Built by Lemonvoice. In the market today.</h2>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
@@ -408,7 +408,7 @@ function ConsultationCTA() {
   return (
     <section
       id="consultation"
-      className="py-24 px-6 bg-gradient-to-br from-[#4a7c59] to-[#3d6849] text-white text-center"
+      className="py-14 px-6 bg-gradient-to-br from-[#4a7c59] to-[#3d6849] text-white text-center"
     >
       <div className="max-w-2xl mx-auto">
         <Image
@@ -419,7 +419,7 @@ function ConsultationCTA() {
           className="mx-auto mb-6 opacity-90"
         />
         <h2 className="text-4xl font-bold mb-4">Free Consultation</h2>
-        <p className="text-white/80 text-lg mb-10 leading-relaxed">
+        <p className="text-white/80 text-lg mb-6 leading-relaxed">
           Tell us how your business makes money and where the friction is. We&apos;ll show you exactly what we&apos;d build to fix it.
         </p>
         <a

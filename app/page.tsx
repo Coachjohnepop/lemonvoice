@@ -439,12 +439,19 @@ function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-400 py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-        <Image
-          src="/images/Lemonvoice-Footer-Logo.webp"
-          alt="Lemonvoice"
-          width={140}
-          height={36}
-        />
+        <a
+          href="https://calendly.com/john-lemonvoice/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-all duration-300 hover:scale-[3] origin-bottom-left"
+        >
+          <Image
+            src="/images/Lemonvoice-Footer-Logo.webp"
+            alt="Lemonvoice"
+            width={140}
+            height={36}
+          />
+        </a>
         <p>© 2024 Lemonvoice. All rights reserved.</p>
       </div>
     </footer>

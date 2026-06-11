@@ -80,7 +80,7 @@ function Hero() {
         <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
           We scope, build, and launch custom applications around your business processes and revenue goals — from first idea to live product.
         </p>
-        <div className="flex flex-col sm:flex-row gap-16 justify-center">
+        <div className="flex flex-col sm:flex-row gap-32 justify-center">
           <a
             href="https://calendly.com/john-lemonvoice/30min"
             target="_blank"

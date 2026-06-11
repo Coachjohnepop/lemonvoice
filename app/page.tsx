@@ -80,18 +80,18 @@ function Hero() {
         <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
           We scope, build, and launch custom applications around your business processes and revenue goals — from first idea to live product.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-16 justify-center">
           <a
             href="https://calendly.com/john-lemonvoice/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-10 py-4 rounded-full text-lg transition-all hover:scale-[1.2]"
+            className="inline-block bg-[#4a7c59] hover:bg-[#3d6849] text-white font-semibold px-5 py-2 rounded-full text-sm transition-all hover:scale-[1.2]"
           >
             Pitch Your Idea
           </a>
           <a
             href="#how-we-work"
-            className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-10 py-4 rounded-full text-lg transition-all hover:scale-[1.2]"
+            className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-5 py-2 rounded-full text-sm transition-all hover:scale-[1.2]"
           >
             See How We Work
           </a>

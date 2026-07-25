@@ -15,6 +15,8 @@ const SLIDES = [
     h: 112,
     bg: "bg-transparent",
     label: null as string | null,
+    href: "#case-studies",
+    external: false,
   },
   {
     src: "/images/ecodelight-logo.png",
@@ -22,7 +24,9 @@ const SLIDES = [
     w: 240,
     h: 140,
     bg: "bg-[#f5f0e8]",
-    label: "Eco Delight Coffee — a full coffee ERP",
+    label: "Eco Delight Coffee — a full coffee ERP →",
+    href: "https://buyecodelight.com/store/powered-by",
+    external: true,
   },
   {
     src: "/images/trainstation-logo.png",
@@ -30,7 +34,9 @@ const SLIDES = [
     w: 220,
     h: 120,
     bg: "bg-white border border-gray-200",
-    label: "The Train Station — a training platform",
+    label: "The Train Station — a training platform →",
+    href: "https://www.thetrainstation.co/powered-by",
+    external: true,
   },
 ];
 
@@ -50,9 +56,12 @@ export function RotatingHero() {
         {/* Rotating stage */}
         <div className="relative mx-auto mb-4 h-44 w-full max-w-md">
           {SLIDES.map((s, idx) => (
-            <div
+            <a
               key={s.src}
-              className={`absolute inset-0 flex items-center justify-center rounded-2xl transition-opacity duration-700 ${s.bg} ${
+              href={s.href}
+              {...(s.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              title={s.external ? `See how ${s.alt} was built` : "See the case studies"}
+              className={`absolute inset-0 flex items-center justify-center rounded-2xl transition-opacity duration-700 hover:ring-2 hover:ring-[#4a7c59]/40 ${s.bg} ${
                 idx === i ? "opacity-100" : "opacity-0 pointer-events-none"
               }`}
             >
@@ -64,7 +73,7 @@ export function RotatingHero() {
                 priority={idx === 0}
                 className="object-contain max-h-28 w-auto"
               />
-            </div>
+            </a>
           ))}
         </div>
 

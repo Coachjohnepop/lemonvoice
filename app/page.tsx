@@ -181,11 +181,22 @@ function EcoDelightCaseStudy() {
         <h2 className="text-3xl md:text-4xl font-bold mb-6 max-w-3xl text-balance">
           A coffee roaster ran on guesswork. Now it runs on a system that could stand an acquisition.
         </h2>
-        <div className="flex items-baseline gap-4 mb-10 rounded-xl bg-white/5 border border-white/10 px-6 py-5 max-w-2xl">
+        <div className="group relative flex items-baseline gap-4 mb-10 rounded-xl bg-white/5 border border-white/10 px-6 py-5 max-w-2xl cursor-help">
           <div className="text-4xl font-bold text-[#a3d9b1] tabular-nums flex-none">700+</div>
           <p className="text-sm text-white/80 leading-relaxed">
             hours of build poured in — the depth of a year-long firm engagement, delivered in weeks.
+            <span className="block text-xs text-white/40 mt-1">Hover for the version-control record</span>
           </p>
+          {/* Provable floor from git history — the number behind the number */}
+          <div className="pointer-events-none absolute left-6 -bottom-2 translate-y-full z-20 w-72 rounded-lg bg-white text-gray-900 shadow-xl p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-2xl font-bold text-[#1e3a2a] tabular-nums">~600</span>
+              <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#4a7c59] bg-[#4a7c59]/10 px-2 py-0.5 rounded-full">✓ documented in git</span>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed">
+              Provable from version control: 79 active build days, first commit to last, Jan–Jul 2026. The 700+ headline adds the testing, spec, and operations time that never lands in a commit.
+            </p>
+          </div>
         </div>
         <div className="grid md:grid-cols-2 gap-10 items-start mb-12">
           <div className="space-y-4 text-white/80 leading-relaxed">

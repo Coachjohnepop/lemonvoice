@@ -181,6 +181,12 @@ function EcoDelightCaseStudy() {
         <h2 className="text-3xl md:text-4xl font-bold mb-6 max-w-3xl text-balance">
           A coffee roaster ran on guesswork. Now it runs on a system that could stand an acquisition.
         </h2>
+        <div className="flex items-baseline gap-4 mb-10 rounded-xl bg-white/5 border border-white/10 px-6 py-5 max-w-2xl">
+          <div className="text-4xl font-bold text-[#a3d9b1] tabular-nums flex-none">700+</div>
+          <p className="text-sm text-white/80 leading-relaxed">
+            hours of build poured in — the depth of a year-long firm engagement, delivered in weeks.
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 gap-10 items-start mb-12">
           <div className="space-y-4 text-white/80 leading-relaxed">
             <p>

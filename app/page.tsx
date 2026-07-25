@@ -173,8 +173,8 @@ function EcoDelightCaseStudy() {
     <section id="case-studies" className="py-20 px-6 bg-gradient-to-br from-[#1e3a2a] to-[#14251b] text-white">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 mb-6">
-          <span className="inline-flex items-center rounded-full bg-white px-4 py-2">
-            <Image src="/images/ecodelight-logo.png" alt="Eco Delight Coffee" width={130} height={40} className="object-contain h-8 w-auto" />
+          <span className="inline-flex items-center rounded-full bg-[#f5f0e8] px-4 py-2">
+            <Image src="/images/ecodelight-logo.webp" alt="Eco Delight Coffee" width={160} height={48} className="object-contain h-10 w-auto" />
           </span>
           <span className="text-xs font-semibold uppercase tracking-widest text-[#a3d9b1]">Featured Case Study</span>
         </div>

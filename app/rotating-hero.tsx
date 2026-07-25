@@ -19,10 +19,10 @@ const SLIDES = [
     external: false,
   },
   {
-    src: "/images/ecodelight-logo.png",
+    src: "/images/ecodelight-logo.webp",
     alt: "Eco Delight Coffee",
-    w: 240,
-    h: 140,
+    w: 420,
+    h: 320,
     bg: "bg-[#f5f0e8]",
     label: "Eco Delight Coffee — a full coffee ERP →",
     href: "https://buyecodelight.com/store/powered-by",
@@ -50,16 +50,32 @@ export function RotatingHero() {
     return () => clearInterval(t);
   }, []);
 
+  // External case studies open in a sized POPUP window (closeable, keeps this
+  // tab put) rather than a new tab (John 7/25). Internal anchors scroll normally.
+  const open = (e: React.MouseEvent, s: (typeof SLIDES)[number]) => {
+    if (!s.external) return; // let the in-page #anchor behave normally
+    e.preventDefault();
+    const w = Math.min(1200, window.screen.availWidth - 80);
+    const h = Math.min(900, window.screen.availHeight - 80);
+    const left = (window.screen.availWidth - w) / 2;
+    const top = (window.screen.availHeight - h) / 2;
+    window.open(
+      s.href,
+      "poweredBy",
+      `popup=yes,width=${w},height=${h},left=${left},top=${top},scrollbars=yes,resizable=yes`
+    );
+  };
+
   return (
     <section className="bg-gradient-to-br from-[#f0f7f2] via-white to-[#fefce8] py-20 px-6 text-center">
       <div className="max-w-4xl mx-auto">
-        {/* Rotating stage */}
-        <div className="relative mx-auto mb-4 h-44 w-full max-w-md">
+        {/* Rotating stage — 2x size */}
+        <div className="relative mx-auto mb-5 h-80 w-full max-w-2xl">
           {SLIDES.map((s, idx) => (
             <a
               key={s.src}
               href={s.href}
-              {...(s.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              onClick={(e) => open(e, s)}
               title={s.external ? `See how ${s.alt} was built` : "See the case studies"}
               className={`absolute inset-0 flex items-center justify-center rounded-2xl transition-opacity duration-700 hover:ring-2 hover:ring-[#4a7c59]/40 ${s.bg} ${
                 idx === i ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -71,7 +87,7 @@ export function RotatingHero() {
                 width={s.w}
                 height={s.h}
                 priority={idx === 0}
-                className="object-contain max-h-28 w-auto"
+                className="object-contain max-h-56 w-auto p-4"
               />
             </a>
           ))}

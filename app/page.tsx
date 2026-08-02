@@ -301,6 +301,14 @@ function TrainStationCaseStudy() {
 
 const supporting = [
   {
+    logo: "/images/capital-audio-logo-dark.svg",
+    name: "Capital Audio",
+    tag: "Live Capture Studio",
+    description:
+      "Multi-track audio and multi-cam video for live shows — media library, multicam sync, timeline studio, and client review portal for Sacramento's Capital of California scene.",
+    url: "https://saccapitalaudio.com/powered-by",
+  },
+  {
     logo: "/images/EYE.png",
     name: "Live Caption AI",
     tag: "Accessibility Tech",
@@ -324,7 +332,7 @@ function SupportingWork() {
           <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">Other Work</p>
           <h2 className="text-3xl font-bold text-gray-900">More systems in the market today.</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {supporting.map((c) => (
             <a
               key={c.name}
@@ -333,8 +341,19 @@ function SupportingWork() {
               rel="noopener noreferrer"
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
             >
-              <div className="bg-white h-28 flex items-center justify-center p-6 border-b border-gray-100">
-                <Image src={c.logo} alt={c.name} width={110} height={60} className="object-contain max-h-16 w-auto" />
+              <div
+                className={`h-28 flex items-center justify-center p-6 border-b border-gray-100 ${
+                  c.name === "Capital Audio" ? "bg-[#0c0c0c]" : "bg-white"
+                }`}
+              >
+                <Image
+                  src={c.logo}
+                  alt={c.name}
+                  width={c.name === "Capital Audio" ? 200 : 110}
+                  height={60}
+                  className="object-contain max-h-16 w-auto"
+                  unoptimized={c.logo.endsWith(".svg")}
+                />
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-3">

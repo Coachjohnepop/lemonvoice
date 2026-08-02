@@ -38,6 +38,16 @@ const SLIDES = [
     href: "https://www.thetrainstation.co/powered-by",
     external: true,
   },
+  {
+    src: "/images/capital-audio-logo-dark.svg",
+    alt: "Capital Audio",
+    w: 360,
+    h: 96,
+    bg: "bg-[#0c0c0c] border border-white/10",
+    label: "Capital Audio — live capture studio →",
+    href: "https://saccapitalaudio.com/powered-by",
+    external: true,
+  },
 ];
 
 export function RotatingHero() {
@@ -87,6 +97,7 @@ export function RotatingHero() {
                 width={s.w}
                 height={s.h}
                 priority={idx === 0}
+                unoptimized={s.src.endsWith(".svg")}
                 className="object-contain max-h-56 w-auto p-4"
               />
             </a>

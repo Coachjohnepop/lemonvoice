@@ -135,7 +135,7 @@ export function RotatingHero() {
           Software systems · AI lawn
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-[1.1] mb-6 text-balance">
-          We rebuild how a business runs — and we keep lawns cut with robots.
+          We rebuild how a business runs — & we keep lawns cut with robots.
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-9">
           Custom software around how you actually make money. And, for two years, AI lawn mowing with Segway Navimow — we run the robots, and we consult the operators who want a fleet of their own.

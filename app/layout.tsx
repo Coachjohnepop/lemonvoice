@@ -8,9 +8,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Lemonvoice — Business Transformation, Built in Software",
+  title: "Lemonvoice — Software Systems & AI Lawn",
   description:
-    "We rebuild how your business runs — around how it actually makes money. Transformation consulting that ships working software in weeks. See the Eco Delight Coffee case study.",
+    "Two practices, one firm: custom software that rebuilds how a business runs, and AI lawn mowing with Segway Navimow robots — service and consulting, two years in.",
   icons: {
     icon: "/favicon.jpg",
     apple: "/favicon.jpg",

@@ -23,6 +23,8 @@ export default function Home() {
       <Nav />
       <main>
         <RotatingHero />
+        <BusinessAreas />
+        <LawnPractice />
         <TheShift />
         <Approach />
         <EcoDelightCaseStudy />
@@ -47,9 +49,10 @@ function Nav() {
           priority
         />
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+          <a href="#practices" className="hover:text-gray-900 transition-colors">What we do</a>
+          <a href="#lawn" className="hover:text-gray-900 transition-colors">AI Lawn</a>
           <a href="#approach" className="hover:text-gray-900 transition-colors">Approach</a>
           <a href="#case-studies" className="hover:text-gray-900 transition-colors">Case Studies</a>
-          <a href="#work" className="hover:text-gray-900 transition-colors">Other Work</a>
         </nav>
         <a
           href={CAL}
@@ -61,6 +64,191 @@ function Nav() {
         </a>
       </div>
     </header>
+  );
+}
+
+function BusinessAreas() {
+  return (
+    <section id="practices" className="py-16 px-6 bg-white border-t border-gray-100">
+      <div className="max-w-6xl mx-auto">
+        <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-3">
+          What we do
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-balance">
+          Two practices. Same firm.
+        </h2>
+        <p className="text-gray-600 max-w-2xl mb-10">
+          Software that replaces the patchwork. Lawns that stay cut without a crew on a mower. We have run both for years — one from the keyboard, one from a Segway Navimow fleet.
+        </p>
+        <div className="grid md:grid-cols-2 gap-6">
+          <a
+            href="#approach"
+            className="group rounded-3xl border border-gray-200 bg-[#f9fbf9] p-8 hover:border-[#4a7c59]/40 hover:shadow-md transition-all"
+          >
+            <p className="text-xs font-bold uppercase tracking-widest text-[#4a7c59] mb-3">Practice 01</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Custom software</h3>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              We map how you make money, then build the system that runs the operation — order-to-cash, reporting, the daily loop. You own it.
+            </p>
+            <span className="text-[#4a7c59] font-semibold text-sm group-hover:gap-2 inline-flex items-center gap-1 transition-all">
+              How we build <span>→</span>
+            </span>
+          </a>
+          <a
+            href="#lawn"
+            className="group rounded-3xl border border-[#ff5a00]/25 bg-[#0b0d0c] p-8 text-white hover:shadow-md transition-all overflow-hidden relative"
+          >
+            <p className="text-xs font-bold uppercase tracking-widest text-[#ff8a3d] mb-3">Practice 02 · since 2024</p>
+            <h3 className="text-2xl font-bold mb-3">AI lawn mowing</h3>
+            <p className="text-white/75 leading-relaxed mb-6">
+              In partnership with Segway Navimow. We mow properties with robot fleets, and we consult operators who want to put the same machines to work.
+            </p>
+            <span className="text-[#ff8a3d] font-semibold text-sm group-hover:gap-2 inline-flex items-center gap-1 transition-all">
+              Service &amp; consulting <span>→</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LawnPractice() {
+  return (
+    <section id="lawn" className="py-20 px-6 bg-[#0f1612] text-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-wrap items-center gap-5 mb-8">
+          <span className="inline-flex items-center gap-4 rounded-2xl bg-white px-5 py-3">
+            <Image
+              src="/images/navimow/segway-wordmark-dark.svg"
+              alt="Segway"
+              width={120}
+              height={25}
+              unoptimized
+              className="h-6 w-auto"
+            />
+            <span className="h-6 w-px bg-gray-200" aria-hidden />
+            <Image
+              src="/images/navimow/navimow-wordmark.svg"
+              alt="Navimow"
+              width={130}
+              height={24}
+              unoptimized
+              className="h-5 w-auto"
+            />
+          </span>
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#ff8a3d]">
+            Partner fleet · two years in
+          </span>
+        </div>
+
+        <h2 className="text-3xl md:text-4xl font-bold mb-5 max-w-3xl text-balance">
+          AI lawn mowing with Segway Navimow — we cut the grass, and we teach the fleet.
+        </h2>
+        <p className="text-white/75 leading-relaxed max-w-3xl mb-12">
+          Since 2024 we have run robotic mowing in partnership with Segway Navimow. The machines map the yard, stay inside a virtual boundary, and keep working while nobody is standing on a deck. Our own unit is a <span className="text-white font-semibold">Navimow X330</span> — the one-acre X3, GPS to the centimeter, quiet enough for a weekday morning.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="rounded-2xl bg-white/5 border border-white/10 p-7">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#ff8a3d] mb-3">We mow</p>
+            <h3 className="text-xl font-semibold mb-3">Robot lawn service</h3>
+            <p className="text-white/70 text-sm leading-relaxed mb-4">
+              Install, map, and run Segway Navimow units on the property. No weekly crew. No boundary wire. The lawn stays at a set height, and the robot returns itself to charge.
+            </p>
+            <ul className="space-y-2 text-sm text-white/80">
+              {[
+                "Wire-free setup and zone mapping",
+                "Recurring weekly cut on the X330 and sister X3 units",
+                "Slope, multi-zone, and obstacle-aware routes",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-[#ff8a3d] mt-0.5">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-white/5 border border-white/10 p-7">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#a3d9b1] mb-3">We advise</p>
+            <h3 className="text-xl font-semibold mb-3">AI lawn consulting</h3>
+            <p className="text-white/70 text-sm leading-relaxed mb-4">
+              For landscape companies and property owners standing up a robot program. Which machine, how many, how to price a route, how to keep the fleet online.
+            </p>
+            <ul className="space-y-2 text-sm text-white/80">
+              {[
+                "Fleet sizing and model mix (X3 / X330 and up)",
+                "Install playbooks, antenna, and virtual boundaries",
+                "Ops: charging, winter, theft, and customer comms",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-[#a3d9b1] mt-0.5">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4 mb-10">
+          <figure className="rounded-2xl bg-black/40 border border-white/10 p-4 flex flex-col">
+            <Image
+              src="/images/navimow/navimow-x330-alt.png"
+              alt="Segway Navimow X330 three-quarter view"
+              width={640}
+              height={640}
+              className="object-contain w-full h-56"
+            />
+            <figcaption className="mt-3 text-xs uppercase tracking-widest text-white/50">
+              Navimow X330 · our machine
+            </figcaption>
+          </figure>
+          <figure className="rounded-2xl bg-black/40 border border-white/10 p-4 flex flex-col">
+            <Image
+              src="/images/navimow/navimow-x330-studio.png"
+              alt="Segway Navimow X330 studio product shot"
+              width={640}
+              height={640}
+              className="object-contain w-full h-56"
+            />
+            <figcaption className="mt-3 text-xs uppercase tracking-widest text-white/50">
+              X3 series · Segway Navimow
+            </figcaption>
+          </figure>
+          <figure className="rounded-2xl overflow-hidden border border-white/10 bg-black/40 flex flex-col">
+            <Image
+              src="/images/navimow/navimow-x3-card.jpg"
+              alt="Segway Navimow X3 mowing a lawn"
+              width={640}
+              height={372}
+              className="object-cover w-full h-56"
+            />
+            <figcaption className="p-4 text-xs uppercase tracking-widest text-white/50">
+              On the turf
+            </figcaption>
+          </figure>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a
+            href={CAL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-[#ff5a00] hover:bg-[#e65000] text-white font-semibold px-6 py-3 rounded-full text-sm transition-all hover:scale-105"
+          >
+            Talk lawn service or consulting
+          </a>
+          <a
+            href="https://navimow.com/products/segway-navimow-x330"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center border border-white/30 text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-white/10 transition-all"
+          >
+            Segway Navimow X330 <span className="ml-1">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 

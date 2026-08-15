@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 
 const CAL = "https://calendly.com/john-lemonvoice/30min";
 
-// The hero stage cycles the Lemonvoice mark with the two featured builds —
-// "we made these" said without a sentence (John 7/25).
+// The hero stage cycles the Lemonvoice mark with the two featured builds
+// plus the Segway Navimow lawn practice (John 7/25; lawn added 8/15).
 const SLIDES = [
   {
     src: "/images/Lemonvoice_Header_Logo.webp",
@@ -15,7 +15,17 @@ const SLIDES = [
     h: 112,
     bg: "bg-transparent",
     label: null as string | null,
-    href: "#case-studies",
+    href: "#practices",
+    external: false,
+  },
+  {
+    src: "/images/navimow/navimow-x330-alt.png",
+    alt: "Segway Navimow X330",
+    w: 420,
+    h: 420,
+    bg: "bg-[#0b0d0c]",
+    label: "Segway Navimow X330 — AI lawn, two years in →",
+    href: "#lawn",
     external: false,
   },
   {
@@ -86,7 +96,7 @@ export function RotatingHero() {
               key={s.src}
               href={s.href}
               onClick={(e) => open(e, s)}
-              title={s.external ? `See how ${s.alt} was built` : "See the case studies"}
+              title={s.external ? `See how ${s.alt} was built` : s.label ?? "See what we do"}
               className={`absolute inset-0 flex items-center justify-center rounded-2xl transition-opacity duration-700 hover:ring-2 hover:ring-[#4a7c59]/40 ${s.bg} ${
                 idx === i ? "opacity-100" : "opacity-0 pointer-events-none"
               }`}
@@ -122,13 +132,13 @@ export function RotatingHero() {
         </div>
 
         <p className="text-sm font-semibold text-[#4a7c59] uppercase tracking-widest mb-4">
-          Business Transformation, Built in Software
+          Software systems · AI lawn
         </p>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-[1.1] mb-6 text-balance">
-          We rebuild how your business runs — around how it actually makes money.
+          We rebuild how a business runs — and we keep lawns cut with robots.
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-9">
-          Not another app. We study your operation, find where margin leaks and time disappears, and build the custom system that fixes it — the kind of transformation that usually takes a firm and a year, delivered in weeks.
+          Custom software around how you actually make money. And, for two years, AI lawn mowing with Segway Navimow — we run the robots, and we consult the operators who want a fleet of their own.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -140,10 +150,10 @@ export function RotatingHero() {
             Start a Conversation
           </a>
           <a
-            href="#case-studies"
+            href="#lawn"
             className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-8 py-3.5 rounded-full text-base transition-all hover:scale-105"
           >
-            See the Proof
+            AI Lawn
           </a>
         </div>
       </div>

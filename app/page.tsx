@@ -1,27 +1,36 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ConsultationCTA, FloatingCTA, Footer, Nav } from "./components/chrome";
+import { Faq } from "./components/faq";
+import { CAL, SITE_URL } from "./lib/site";
 import { RotatingHero } from "./rotating-hero";
 
-const CAL = "https://calendly.com/john-lemonvoice/30min";
+export const metadata: Metadata = {
+  alternates: { canonical: SITE_URL },
+};
 
-function FloatingCTA() {
-  return (
-    <a
-      href={CAL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
-    >
-      <span>📅</span> Start a Conversation
-    </a>
-  );
-}
+const HOME_FAQ = [
+  {
+    q: "What does Lemonvoice do?",
+    a: "Two practices, one firm: custom software that rebuilds how a business runs, and robot lawn mowing with Segway Navimow in Greater Sacramento — plus consulting for operators who want a fleet of their own.",
+  },
+  {
+    q: "Do clients own the software?",
+    a: "Yes. You own it outright. Engagements are scoped on paper and billed by invoice — no subscription you cannot escape.",
+  },
+  {
+    q: "Where is the lawn service?",
+    a: "Robot lawn mowing is Greater Sacramento. Fleet consulting for landscape operators can be remote.",
+  },
+];
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen font-[var(--font-geist-sans)]">
       <FloatingCTA />
       <Nav />
-      <main>
+      <main id="main">
         <RotatingHero />
         <BusinessAreas />
         <LawnPractice />
@@ -30,40 +39,11 @@ export default function Home() {
         <EcoDelightCaseStudy />
         <TrainStationCaseStudy />
         <SupportingWork />
+        <Faq items={HOME_FAQ} heading="Straight answers." />
         <ConsultationCTA />
       </main>
       <Footer />
     </div>
-  );
-}
-
-function Nav() {
-  return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Image
-          src="/images/Lemonvoice-Navbar-Logo.webp"
-          alt="Lemonvoice"
-          width={160}
-          height={40}
-          priority
-        />
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-          <a href="#practices" className="hover:text-gray-900 transition-colors">What we do</a>
-          <a href="#lawn" className="hover:text-gray-900 transition-colors">AI Lawn</a>
-          <a href="#approach" className="hover:text-gray-900 transition-colors">Approach</a>
-          <a href="#case-studies" className="hover:text-gray-900 transition-colors">Case Studies</a>
-        </nav>
-        <a
-          href={CAL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all hover:scale-105"
-        >
-          Start a Conversation
-        </a>
-      </div>
-    </header>
   );
 }
 
@@ -81,8 +61,8 @@ function BusinessAreas() {
           Software that replaces the patchwork. Lawns that stay cut without a crew on a mower. We have run both for years — one from the keyboard, one from a Segway Navimow fleet.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
-          <a
-            href="#approach"
+          <Link
+            href="/software"
             className="group rounded-3xl border border-gray-200 bg-[#f9fbf9] p-8 hover:border-[#4a7c59]/40 hover:shadow-md transition-all"
           >
             <p className="text-xs font-bold uppercase tracking-widest text-[#4a7c59] mb-3">Practice 01</p>
@@ -93,9 +73,9 @@ function BusinessAreas() {
             <span className="text-[#4a7c59] font-semibold text-sm group-hover:gap-2 inline-flex items-center gap-1 transition-all">
               How we build <span>→</span>
             </span>
-          </a>
-          <a
-            href="#lawn"
+          </Link>
+          <Link
+            href="/ai-lawn"
             className="group rounded-3xl border border-[#ff5a00]/25 bg-[#0b0d0c] p-8 text-white hover:shadow-md transition-all overflow-hidden relative"
           >
             <p className="text-xs font-bold uppercase tracking-widest text-[#ff8a3d] mb-3">Practice 02 · since 2024</p>
@@ -106,7 +86,7 @@ function BusinessAreas() {
             <span className="text-[#ff8a3d] font-semibold text-sm group-hover:gap-2 inline-flex items-center gap-1 transition-all">
               Service &amp; consulting <span>→</span>
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -146,7 +126,7 @@ function LawnPractice() {
           AI lawn mowing with Segway Navimow — we cut the grass, and we teach the fleet.
         </h2>
         <p className="text-white/75 leading-relaxed max-w-3xl mb-12">
-          Since 2024 we have run robotic mowing in partnership with Segway Navimow. The machines map the yard, stay inside a virtual boundary, and keep working while nobody is standing on a deck. Our own unit is a <span className="text-white font-semibold">Navimow X330</span> — the one-acre X3, GPS to the centimeter, quiet enough for a weekday morning.
+          Since 2024 we have run robotic mowing in Greater Sacramento in partnership with Segway Navimow. The machines map the yard, stay inside a virtual boundary, and keep working while nobody is standing on a deck. Our own unit is a <span className="text-white font-semibold">Navimow X330</span> — the one-acre X3, GPS to the centimeter, quiet enough for a weekday morning.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -238,14 +218,12 @@ function LawnPractice() {
           >
             Talk lawn service or consulting
           </a>
-          <a
-            href="https://navimow.com/products/segway-navimow-x330"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/ai-lawn"
             className="inline-flex items-center justify-center border border-white/30 text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-white/10 transition-all"
           >
-            Segway Navimow X330 <span className="ml-1">→</span>
-          </a>
+            Robot lawn mowing in Sacramento <span className="ml-1">→</span>
+          </Link>
         </div>
       </div>
     </section>
@@ -283,7 +261,7 @@ function TheShift() {
         <div className="flex justify-center">
           <Image
             src="/images/Money-Making_Graphic.webp"
-            alt="Revenue-driven workflows"
+            alt="Diagram of revenue-driven workflows Lemonvoice maps before writing software"
             width={480}
             height={400}
             className="rounded-2xl"
@@ -561,52 +539,4 @@ function SupportingWork() {
   );
 }
 
-function ConsultationCTA() {
-  return (
-    <section
-      id="consultation"
-      className="py-20 px-6 bg-gradient-to-br from-[#4a7c59] to-[#3d6849] text-white text-center"
-    >
-      <div className="max-w-2xl mx-auto">
-        <Image src="/images/Lemons.webp" alt="" width={110} height={110} className="mx-auto mb-6 opacity-90" />
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-          Tell us how your business makes money.
-        </h2>
-        <p className="text-white/80 text-lg mb-8 leading-relaxed">
-          We&apos;ll show you where the friction is and exactly what we&apos;d build to remove it. The first conversation is free — and worth having.
-        </p>
-        <a
-          href={CAL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-white text-[#4a7c59] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-all hover:scale-105"
-        >
-          Start a Conversation
-        </a>
-      </div>
-    </section>
-  );
-}
 
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-gray-400 py-10 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-        <a
-          href={CAL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition-all duration-300 hover:scale-[2] origin-bottom-left"
-        >
-          <Image
-            src="/images/Lemonvoice-Footer-Logo-White.webp"
-            alt="Lemonvoice"
-            width={140}
-            height={36}
-          />
-        </a>
-        <p>© 2026 Lemonvoice. All rights reserved.</p>
-      </div>
-    </footer>
-  );
-}

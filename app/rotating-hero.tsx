@@ -150,7 +150,7 @@ export function RotatingHero() {
             Start a Conversation
           </a>
           <a
-            href="#lawn"
+            href="/ai-lawn"
             className="inline-block border border-gray-300 hover:border-gray-400 text-gray-700 font-semibold px-8 py-3.5 rounded-full text-base transition-all hover:scale-105"
           >
             AI Lawn

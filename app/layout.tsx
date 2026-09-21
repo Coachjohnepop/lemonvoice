@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { JsonLd } from "./components/json-ld";
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, EMAIL, SITE_URL } from "./lib/site";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, EMAIL, PHONE_TEL, SITE_URL } from "./lib/site";
 import "./globals.css";
 
 const geist = Geist({
@@ -64,6 +64,7 @@ const organizationJsonLd = {
   name: "Lemonvoice",
   url: SITE_URL,
   email: EMAIL,
+  telephone: PHONE_TEL,
   description: DEFAULT_DESCRIPTION,
   areaServed: {
     "@type": "AdministrativeArea",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CAL, EMAIL } from "../lib/site";
+import { CAL, EMAIL, PHONE, PHONE_TEL } from "../lib/site";
 
 export function FloatingCTA() {
   return (
@@ -77,6 +77,13 @@ export function ConsultationCTA() {
         >
           Start a Conversation
         </a>
+        <p className="mt-6 text-white/80 text-base">
+          Or call{" "}
+          <a href={`tel:${PHONE_TEL}`} className="font-semibold text-white underline underline-offset-4 hover:no-underline">
+            {PHONE}
+          </a>
+          . Leave a message and we&apos;ll call you back.
+        </p>
       </div>
     </section>
   );
@@ -110,6 +117,9 @@ export function Footer() {
             </Link>
             <a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors">
               {EMAIL}
+            </a>
+            <a href={`tel:${PHONE_TEL}`} className="hover:text-white transition-colors">
+              {PHONE}
             </a>
           </nav>
         </div>

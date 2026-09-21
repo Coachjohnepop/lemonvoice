@@ -1,6 +1,8 @@
 export const SITE_URL = "https://www.lemonvoice.com";
 export const CAL = "https://calendly.com/john-lemonvoice/30min";
 export const EMAIL = "john@lemonvoice.com";
+export const PHONE = "(916) 526-3703";
+export const PHONE_TEL = "+19165263703";
 export const AREA = "Greater Sacramento, California";
 
 export const DEFAULT_TITLE =

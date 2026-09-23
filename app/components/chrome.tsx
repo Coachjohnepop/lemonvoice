@@ -42,14 +42,23 @@ export function Nav() {
             Case Studies
           </Link>
         </nav>
-        <a
-          href={CAL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all hover:scale-105"
-        >
-          Start a Conversation
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href={`tel:${PHONE_TEL}`}
+            className="text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
+            aria-label={`Call Lemonvoice at ${PHONE}`}
+          >
+            {PHONE}
+          </a>
+          <a
+            href={CAL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#4a7c59] hover:bg-[#3d6849] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all hover:scale-105"
+          >
+            Start a Conversation
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -124,7 +133,12 @@ export function Footer() {
           </nav>
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm border-t border-white/10 pt-6">
-          <p>Greater Sacramento, California</p>
+          <p>
+            Greater Sacramento, California ·{" "}
+            <a href={`tel:${PHONE_TEL}`} className="hover:text-white transition-colors">
+              {PHONE}
+            </a>
+          </p>
           <p>© 2026 Lemonvoice. All rights reserved.</p>
         </div>
       </div>

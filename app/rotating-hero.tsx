@@ -29,14 +29,14 @@ const SLIDES = [
     external: false,
   },
   {
-    src: "/images/ecodelight-logo.webp",
-    alt: "Eco Delight Coffee",
+    src: "/images/Appscreen-Hand.webp",
+    alt: "Roastery ERP on a phone",
     w: 420,
     h: 320,
     bg: "bg-[#f5f0e8]",
-    label: "Eco Delight Coffee — a full coffee ERP →",
-    href: "https://buyecodelight.com/store/powered-by",
-    external: true,
+    label: "Roastery ERP — order to cash for a coffee roaster →",
+    href: "#case-studies",
+    external: false,
   },
   {
     src: "/images/trainstation-logo.png",
@@ -75,15 +75,7 @@ export function RotatingHero() {
   const open = (e: React.MouseEvent, s: (typeof SLIDES)[number]) => {
     if (!s.external) return; // let the in-page #anchor behave normally
     e.preventDefault();
-    const w = Math.min(1200, window.screen.availWidth - 80);
-    const h = Math.min(900, window.screen.availHeight - 80);
-    const left = (window.screen.availWidth - w) / 2;
-    const top = (window.screen.availHeight - h) / 2;
-    window.open(
-      s.href,
-      "poweredBy",
-      `popup=yes,width=${w},height=${h},left=${left},top=${top},scrollbars=yes,resizable=yes`
-    );
+    window.open(s.href, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -95,6 +87,8 @@ export function RotatingHero() {
             <a
               key={s.src}
               href={s.href}
+              target={s.external ? "_blank" : undefined}
+              rel={s.external ? "noopener noreferrer" : undefined}
               onClick={(e) => open(e, s)}
               title={s.external ? `See how ${s.alt} was built` : s.label ?? "See what we do"}
               className={`absolute inset-0 flex items-center justify-center rounded-2xl transition-opacity duration-700 hover:ring-2 hover:ring-[#4a7c59]/40 ${s.bg} ${

@@ -35,7 +35,7 @@ const FAQ = [
   },
   {
     q: "How long does a build take?",
-    a: "We ship production software in weeks, not the months a traditional firm would quote. Eco Delight Coffee was a 700+ hour engagement delivered across a handful of months, not a year-long program.",
+    a: "We ship production software in weeks, not the months a traditional firm would quote. A specialty coffee roaster's ERP was a 700+ hour engagement delivered across a handful of months, not a year-long program.",
   },
   {
     q: "Who is this for?",
@@ -166,7 +166,7 @@ export default function SoftwarePage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-10">Systems running businesses today.</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <article className="rounded-2xl border border-gray-200 p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Eco Delight Coffee</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Roastery ERP</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
                   A Sacramento-area roaster replaced QuickBooks, WooCommerce, and spreadsheets with one platform: storefront, wholesale, roasting, fulfillment, and M&amp;A-grade books. Other roasters now license it.
                 </p>

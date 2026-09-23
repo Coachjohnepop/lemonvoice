@@ -35,7 +35,7 @@ export default function Home() {
         <LawnPractice />
         <TheShift />
         <Approach />
-        <EcoDelightCaseStudy />
+        <RoasteryCaseStudy />
         <TrainStationCaseStudy />
         <SupportingWork />
         <Faq items={HOME_FAQ} heading="Straight answers." />
@@ -319,7 +319,7 @@ function Approach() {
   );
 }
 
-function EcoDelightCaseStudy() {
+function RoasteryCaseStudy() {
   const outcomes = [
     { stat: "3 → 1", label: "QuickBooks, WooCommerce & spreadsheets replaced by one platform" },
     { stat: "Order → cash", label: "Automated: quote, roast, pack, ship, invoice, reconcile" },
@@ -338,8 +338,8 @@ function EcoDelightCaseStudy() {
     <section id="case-studies" className="py-20 px-6 bg-gradient-to-br from-[#1e3a2a] to-[#14251b] text-white">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 mb-6">
-          <span className="inline-flex items-center rounded-full bg-[#f5f0e8] px-4 py-2">
-            <Image src="/images/ecodelight-logo.webp" alt="Eco Delight Coffee" width={160} height={48} className="object-contain h-10 w-auto" />
+          <span className="inline-flex items-center rounded-full bg-[#f5f0e8] px-4 py-2 text-sm font-bold text-[#1e3a2a]">
+            Roastery ERP
           </span>
           <span className="text-xs font-semibold uppercase tracking-widest text-[#a3d9b1]">Featured Case Study</span>
         </div>
@@ -366,7 +366,7 @@ function EcoDelightCaseStudy() {
         <div className="grid md:grid-cols-2 gap-10 items-start mb-12">
           <div className="space-y-4 text-white/80 leading-relaxed">
             <p>
-              Eco Delight Coffee was doing what most growing businesses do: holding an operation together with QuickBooks, an online store, and a lot of spreadsheets. Nobody could say, with confidence, which customers actually made money.
+              A Sacramento-area specialty coffee roaster was doing what most growing businesses do: holding an operation together with QuickBooks, an online store, and a lot of spreadsheets. Nobody could say, with confidence, which customers actually made money.
             </p>
             <p>
               We started with the analysis. A custom profitability model — built on the company&apos;s own numbers — revealed exactly where margin was earned and where it quietly drained away. That single view changed how the business made decisions.
@@ -393,15 +393,15 @@ function EcoDelightCaseStudy() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="https://www.buyecodelight.com"
+              href={CAL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white text-[#1e3a2a] font-semibold px-6 py-3 rounded-full text-sm hover:bg-gray-100 transition-all hover:scale-105"
             >
-              See it live at buyecodelight.com <span>→</span>
+              Ask for a walkthrough <span>→</span>
             </a>
             <a
-              href="https://buyecodelight.com/store/powered-by"
+              href={CAL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-white/10 transition-all hover:scale-105"

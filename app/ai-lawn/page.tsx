@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ConsultationCTA, FloatingCTA, Footer, Nav } from "../components/chrome";
+import { ConsultationCTA, Footer, Nav } from "../components/chrome";
 import { Faq } from "../components/faq";
 import { JsonLd } from "../components/json-ld";
 import { CAL, SITE_URL } from "../lib/site";
@@ -61,7 +61,6 @@ export default function AiLawnPage() {
   return (
     <div className="flex flex-col min-h-screen font-[var(--font-geist-sans)]">
       <JsonLd data={jsonLd} />
-      <FloatingCTA />
       <Nav />
       <main id="main">
         <section className="py-20 px-6 bg-[#0f1612] text-white">

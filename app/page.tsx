@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ConsultationCTA, FloatingCTA, Footer, Nav } from "./components/chrome";
+import { ConsultationCTA, Footer, Nav } from "./components/chrome";
 import { Faq } from "./components/faq";
 import { CAL, SITE_URL } from "./lib/site";
 import { RotatingHero } from "./rotating-hero";
@@ -28,7 +28,6 @@ const HOME_FAQ = [
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen font-[var(--font-geist-sans)]">
-      <FloatingCTA />
       <Nav />
       <main id="main">
         <RotatingHero />
